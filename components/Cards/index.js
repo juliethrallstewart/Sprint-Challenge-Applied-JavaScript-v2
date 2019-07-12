@@ -103,7 +103,6 @@ function createCard(item) {
 
     const author = document.createElement('div')
     author.classList.add('author')
-    author.textContent = item.authorName
 
     const imgContainer = document.createElement('div')
     imgContainer.classList.add('img-container')
@@ -112,6 +111,8 @@ function createCard(item) {
     image.src = item.authorPhoto
 
     const authorName = document.createElement('span')
+    authorName.textContent = item.authorName
+
 
 
     card.appendChild(headline)
