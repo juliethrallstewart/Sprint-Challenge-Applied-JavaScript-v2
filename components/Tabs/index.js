@@ -19,6 +19,31 @@ axios.get('https://lambda-times-backend.herokuapp.com/topics')
             const element = tabCreate(item)
             tabComponent.appendChild(element)
 
+
+            // let elements = 0;
+            // tabData.forEach(item => elements++)
+
+            // function addData(elements) {
+
+            //     for (let i = 0; i <= elements; i++) {
+            //         return addData(element.setAttribute('data-tab', `${i}`))
+
+            //     }
+            // }
+            // addData(elements)
+
+            // let addData = (function () {
+            //     return function () {
+            //         for (let i = 0; i <= elements; i++) {
+            //             return addData(element.setAttribute('data-tab', `${i}`))
+            //         }
+            //     }
+            // })();
+
+            // addData()
+
+            //console.log(element)
+
         })
 
     })
@@ -30,5 +55,7 @@ function tabCreate(item) {
     const topic = document.createElement('div')
     topic.classList.add('tab')
     topic.textContent = item
+
     return topic
+
 }

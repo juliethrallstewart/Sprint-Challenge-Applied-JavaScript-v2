@@ -26,62 +26,47 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
         //console.log(res.data.articles)
         const articles = res.data.articles
 
-        const javaScript = 'javascript'
-        const bootstrap = 'bootstrap'
-        const technology = 'technology'
-        const jquery = 'jquery'
-        const node = 'node'
-
-
         for (let i in articles) {
-            if (i.includes(`${javaScript}`)) {
+            if (i.includes('javascript')) {
                 let items = []
                 items = res.data.articles.javascript
                 for (let item in items) {
-                    console.log(items[item])
+                    //console.log(items[item])
                     const element = createCard(items[item])
-                    console.log(cardsContainer)
+                    //console.log(cardsContainer)
                     cardsContainer.appendChild(element)
 
                 }
             }
-            if (i.includes(`${bootstrap}`)) {
+            if (i.includes(`bootstrap`)) {
                 let items = []
                 items = res.data.articles.bootstrap
                 for (let item in items) {
-                    console.log(items[item])
                     const element = createCard(items[item])
-                    console.log(cardsContainer)
                     cardsContainer.appendChild(element)
                 }
             }
-            if (i.includes(`${technology}`)) {
+            if (i.includes(`technology`)) {
                 let items = []
                 items = res.data.articles.technology
                 for (let item in items) {
-                    console.log(items[item])
                     const element = createCard(items[item])
-                    console.log(cardsContainer)
                     cardsContainer.appendChild(element)
                 }
             }
-            if (i.includes(`${jquery}`)) {
+            if (i.includes(`jquery`)) {
                 let items = []
                 items = res.data.articles.jquery
                 for (let item in items) {
-                    console.log(items[item])
                     const element = createCard(items[item])
-                    console.log(cardsContainer)
                     cardsContainer.appendChild(element)
                 }
             }
-            if (i.includes(`${node}`)) {
+            if (i.includes(`node`)) {
                 let items = []
                 items = res.data.articles.node
                 for (let item in items) {
-                    console.log(items[item])
                     const element = createCard(items[item])
-                    console.log(cardsContainer)
                     cardsContainer.appendChild(element)
                 }
             }
