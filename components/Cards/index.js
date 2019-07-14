@@ -28,45 +28,46 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
 
         for (let i in articles) {
             if (i.includes('javascript')) {
-                let items = []
-                items = res.data.articles.javascript
+                let items = res.data.articles.javascript
+                const category = 'javascript'
+                //console.log(items)
                 for (let item in items) {
                     //console.log(items[item])
-                    const element = createCard(items[item])
+                    const element = createCard(items[item], category)
                     //console.log(cardsContainer)
                     cardsContainer.appendChild(element)
 
                 }
             }
             if (i.includes(`bootstrap`)) {
-                let items = []
-                items = res.data.articles.bootstrap
+                let items = res.data.articles.bootstrap
+                const category = 'bootstrap'
                 for (let item in items) {
-                    const element = createCard(items[item])
+                    const element = createCard(items[item], category)
                     cardsContainer.appendChild(element)
                 }
             }
             if (i.includes(`technology`)) {
-                let items = []
-                items = res.data.articles.technology
+                let items = res.data.articles.technology
+                const category = 'technology'
                 for (let item in items) {
-                    const element = createCard(items[item])
+                    const element = createCard(items[item], category)
                     cardsContainer.appendChild(element)
                 }
             }
             if (i.includes(`jquery`)) {
-                let items = []
-                items = res.data.articles.jquery
+                let items = res.data.articles.jquery
+                const category = 'jquery'
                 for (let item in items) {
-                    const element = createCard(items[item])
+                    const element = createCard(items[item], category)
                     cardsContainer.appendChild(element)
                 }
             }
             if (i.includes(`node`)) {
-                let items = []
-                items = res.data.articles.node
+                let items = res.data.articles.node
+                const category = 'node'
                 for (let item in items) {
-                    const element = createCard(items[item])
+                    const element = createCard(items[item], category)
                     cardsContainer.appendChild(element)
                 }
             }
@@ -77,10 +78,11 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
     })
 
 
-function createCard(item) {
+function createCard(item, category) {
 
     const card = document.createElement('div')
     card.classList.add('card')
+    card.dataset.category = category || 'none'; // add dataset to card 
 
     const headline = document.createElement('div')
     headline.classList.add('headline')
@@ -106,7 +108,7 @@ function createCard(item) {
     author.appendChild(imgContainer)
     imgContainer.appendChild(image)
 
-
+    //console.log(card)
     return card
 
 
